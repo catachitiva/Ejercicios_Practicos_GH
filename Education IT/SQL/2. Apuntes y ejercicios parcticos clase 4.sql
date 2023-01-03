@@ -167,7 +167,7 @@ SELECT * FROM productos;
 
 SELECT 2;
 SELECT 2 AS dos;			-- Alias de columna
-SELECT 2 AS número dos;		-- Error
+-- SELECT 2 AS número dos;		-- Error
 SELECT 2 AS 'número dos';	-- Ok
 
 SELECT 2 + 8;
@@ -316,6 +316,14 @@ id_producto			nombre				precio				garantia
 5					Mavic Mini			$59895.00			24 meses
 32					Galaxy S10 128GB	$121121.00			6 meses
 */
+SELECT
+id_producto,
+nombre,
+precio,
+CONCAT_WS(" ", garantia, "Meses") AS Garantia
+FROM
+productos;
+
 
 -- Ej 2: A partir de la tabla de productos, obtener una consulta que muestre los valores formateados de la siguiente manera:
 /*
@@ -327,9 +335,10 @@ id			nombre				precio
 SELECT
 	id_producto AS id,
     nombre,
-    FORMAT(precio, 0, 'es_AR') precio
+    FORMAT(precio, 0, 'es_AR') AS Precio
 FROM
 	productos;
+
 
 -- Ej 3: A partir de la tabla de productos, obtener una consulta que muestre los valores formateados de la siguiente manera:
 /*
@@ -339,6 +348,16 @@ id_producto			nombre				precio				garantia (meses)
 32					GALAXY S10 128GB	$ 121.121,00		6
 */
 
+SELECT
+id_producto,
+nombre,
+precio,
+garantia 
+FROM
+productos;
+
+
+	
 -- Ej 4: A partir de la tabla de productos, obtener una consulta que muestre los valores formateados de la siguiente manera:
 /*
 id_producto			nombre				precio_sin_iva		iva			precio_con_iva				garantia (meses)
@@ -346,6 +365,16 @@ id_producto			nombre				precio_sin_iva		iva			precio_con_iva				garantia (meses)
 5					MAVIC MINI			$ 59.895,00			21%			$ 72.473							24
 32					GALAXY S10 128GB	$ 121.121,00		21%			$ 146.556							6
 */
+SELECT
+id_producto,
+nombre,
+precio As Precio_sin_iva,
+
+FORMAT(precio * 1.21, 0 , "es_ar" )AS precio_con_iva,
+garantia 
+FROM
+productos;
+
 
 -- Ej 5: A partir de la tabla de contactos, obtener una consulta que muestre los valores formateados de la siguiente manera:
 /*
@@ -354,3 +383,9 @@ id			nombre_completo				pais
 2			MARTIN, Fuller				Mexico
 */
 
+SELECT 
+id,
+CONCAT_WS( ", " , UPPER(apellido), nombre) AS nombre_completo,
+pais
+FROM
+contactos ORDER BY id;

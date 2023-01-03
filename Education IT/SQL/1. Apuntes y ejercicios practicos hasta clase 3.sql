@@ -209,4 +209,6 @@ id_producto, nombre, precio, stock
 FROM productos
 WHERE id_producto < 34 OR id_producto > 80;
 
-SELECT * FROM productos WHERE id_producto BETWEEN 34 AND 80; 
+
+-- USANDO NOT BETWEEN:
+SELECT * FROM productos WHERE id_producto NOT BETWEEN 34 AND 80; 
