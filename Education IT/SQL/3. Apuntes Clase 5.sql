@@ -30,7 +30,7 @@ SELECT
 	id,
     pais,
     -- CONCAT(pais, ' (***)') pais,
-    IF (pais = 'Argentina', CONCAT(pais, ' (***)'), pais) pais,
+    IF (pais = 'Argentina', CONCAT(pais, ' (***)'), pais)pais,
     nombre,
     apellido
 FROM
