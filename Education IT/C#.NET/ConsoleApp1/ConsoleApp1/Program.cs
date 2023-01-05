@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection.Emit;
@@ -53,179 +55,35 @@ namespace ConsoleApp1
             }
             if(respuestas == 2)
               {
-                Console.WriteLine("Ingresa primera fecha: AAAA/MM/DD");
-                string fecha1 = (Console.ReadLine());
-                Console.WriteLine("Ingresa segundo numero: AAAA/MM/DD");
-                string fecha2 = (Console.ReadLine());
-               
+                Console.WriteLine("Ingresa primera fecha: AAAA,MM,DD");
+                int fe_1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Ingresa segundo numero: AAAA,MM,DD");
+                int fe_2 = Convert.ToInt32(Console.ReadLine());
 
-                char[] delimitador = {'/'};
-                String[] fechapartida1 = fecha1.Split(delimitador);
-                String[] fechapartida2 = fecha2.Split(delimitador);
+                DateTime fecha1 = new DateTime(fe_1);
+                DateTime fecha2 = new DateTime(fe_2);
 
-               
-
-                if (Convert.ToInt32(fechapartida1[0]) > Convert.ToInt32(fechapartida2[0]))
+                if (fecha1 > fecha2)
                 {
-                  int difanos = Convert.ToInt32(fechapartida1[0]) - Convert.ToInt32(fechapartida2[0]);
-
-                
-                  Console.WriteLine( fecha1 + " es la fecha mayor ingresada y la deferencia es de " + difanos + " años");
-                    
-                    
-                } else
-                 {
-                    int difanos = Convert.ToInt32(fechapartida2[0]) - Convert.ToInt32(fechapartida1[0]);
-                    Console.WriteLine(fecha2 + " es la fecha mayor ingresada y la deferencia es de " + difanos + " años");
-                 }
-
-                int en_dias1;
-                int en_dias2;
-                
-
-                if (fechapartida1[1] == "01")
-                {
-                   en_dias1 = 31 + Convert.ToInt32(fechapartida1[2]);
+                   TimeSpan def = fecha1 - fecha2;
+                   Console.WriteLine("La fecha mayor es " + fecha1 + "y la diferencia es de " + def.Days + " dias.");
                 }
-
-                else if (fechapartida1[1] == "02")
+                else if (fecha1 < fecha2)
                 {
-                   en_dias1 = 31 + 28 + Convert.ToInt32(fechapartida1[2]);
+                   TimeSpan def = fecha2 - fecha1;
+                   Console.WriteLine("La fecha mayor es " + fecha2 + "y la diferencia es de " + def.Days + " dias.");
                 }
-
-                else if (fechapartida1[1] == "03")
-                {
-                   en_dias1 = 31 + 28 + 31 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "04")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "05")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "06")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "07")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "08")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "09")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "10")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + 31 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "11")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else if (fechapartida1[1] == "12")
-                {
-                   en_dias1 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + Convert.ToInt32(fechapartida1[2]);
-                }
-
-                else 
-                {
-                Console.WriteLine("Ingresaste un mes incorrecto.");
-                }
-
-
-
-                if (fechapartida2[1] == "01")
-                {
-                    en_dias2 = 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "02")
-                {
-                    en_dias2 = 31 + 28 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "03")
-                {
-                    en_dias2 = 31 + 28 + 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "04")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "05")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "06")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "07")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "08")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "09")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "10")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "11")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + Convert.ToInt32(fechapartida2[2]);
-                }
-
-                else if (fechapartida2[1] == "12")
-                {
-                    en_dias2 = 31 + 28 + 31 + 30 + 31 + 30 + 31 + 30 + 31 + 31 + 30 + 31 + Convert.ToInt32(fechapartida2[2]);
-                }
-
                 else
                 {
-                    Console.WriteLine("Ingresaste un mes incorrecto.");
+                   Console.WriteLine("Las Fechas son iguales.");
                 }
+                
 
 
 
 
-
-                int f_dias = en_dias1 - en_dias2;
-
-                Console.WriteLine("y de " + f_dias + " dias");
-
-   
-
-            if(respuestas == 3)
+ 
+         if (respuestas == 3)
                 {
 
                 }
