@@ -29,7 +29,7 @@ namespace ConsoleApp1
                               " 3. cuantas vocales hay en una palabra \n");
 
             int respuestas = Convert.ToInt32(Console.ReadLine());
-            if(respuestas == 1)
+            if (respuestas == 1)
             {
                 Console.WriteLine("Ingresa primer numero:");
                 int num1 = Convert.ToInt32(Console.ReadLine());
@@ -38,11 +38,11 @@ namespace ConsoleApp1
 
 
                 int num3 = num1 + num2;
-                Console.WriteLine("Suma: " +  num3);
+                Console.WriteLine("Suma: " + num3);
 
                 num3 = num1 - num2;
                 Console.WriteLine("Resta: " + num3);
-                
+
                 num3 = num1 * num2;
                 Console.WriteLine("Multiplicacion: " + num3);
 
@@ -53,43 +53,46 @@ namespace ConsoleApp1
                 Console.WriteLine("Resto " + num3);
 
             }
-            if(respuestas == 2)
-              {
+            if (respuestas == 2)
+            {
                 Console.WriteLine("Ingresa primera fecha: AAAA,MM,DD");
-                int fe_1 = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Ingresa segundo numero: AAAA,MM,DD");
-                int fe_2 = Convert.ToInt32(Console.ReadLine());
+                string fe_1 = Console.ReadLine();
+                //Console.WriteLine(fe_1);
 
-                DateTime fecha1 = new DateTime(fe_1);
-                DateTime fecha2 = new DateTime(fe_2);
+
+                Console.WriteLine("Ingresa segundo numero: AAAA,MM,DD");
+                string fe_2 = Console.ReadLine();
+
+                DateTime fecha1 = Convert.ToDateTime(fe_1);
+                DateTime fecha2 = Convert.ToDateTime(fe_2);
+
+
+
 
                 if (fecha1 > fecha2)
                 {
-                   TimeSpan def = fecha1 - fecha2;
-                   Console.WriteLine("La fecha mayor es " + fecha1 + "y la diferencia es de " + def.Days + " dias.");
+                    TimeSpan def = fecha1 - fecha2;
+                    Console.WriteLine("La fecha más reciente es " + fecha1 + " y la diferencia es de " + def.Days + " dias.");
                 }
                 else if (fecha1 < fecha2)
                 {
-                   TimeSpan def = fecha2 - fecha1;
-                   Console.WriteLine("La fecha mayor es " + fecha2 + "y la diferencia es de " + def.Days + " dias.");
+                    TimeSpan def = fecha2 - fecha1;
+                    Console.WriteLine("La fecha más reciente es " + fecha2 + " y la diferencia es de " + def.Days + " dias.");
                 }
                 else
                 {
-                   Console.WriteLine("Las Fechas son iguales.");
+                    Console.WriteLine("Las Fechas son iguales.");
                 }
-                
 
 
+            }
+            if (respuestas == 3)
+            {
+                Console.WriteLine("Ingrese una palabra.");
+                string palabra = Console.ReadLine();
 
-
- 
-         if (respuestas == 3)
-                {
-
-                }
-            
-
-
+                Console.WriteLine("Ingrese vocal a contar.");
+                string vocal = Console.ReadLine();
 
 
 
@@ -98,7 +101,7 @@ namespace ConsoleApp1
 
 
 
-           
+            
         }
     }
 }
