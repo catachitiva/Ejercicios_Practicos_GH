@@ -94,9 +94,84 @@ namespace ConsoleApp1
                 Console.WriteLine("Ingrese vocal a contar.");
                 string vocal = Console.ReadLine();
 
+                int a = 0;
+                int e = 0;
+                int i = 0;
+                int o = 0;
+                int u = 0;
+
+                foreach (char x in palabra)
+                {
+                    if (x == 'a' || x == 'A')
+                    {
+                        a++;
+                    }
+                    else if (x == 'e' || x == 'E')
+                    {
+                        e++;
+                    }
+                    else if (x == 'i' || x == 'I')
+                    {
+                        i++;
+                    }
+                    else if (x == 'o' || x == 'O')
+                    {
+                        o++;
+                    }
+                    else if (x == 'u' || x == 'U')
+                    {
+                        u++;
+                    }
+
+                }
+
+                switch (vocal)
+                {
+                    case "a" :
+                        Console.WriteLine("En la palabra {0} se encontraron {1} {2}.", palabra, a, vocal);
+                        break;
+
+                    case "e":
+                        Console.WriteLine("En la palabra {0} se encontraron {1} {2}.", palabra, e, vocal);
+                        break;
+                    case "i":
+                        Console.WriteLine("En la palabra {0} se encontraron {1} {2}.", palabra, i, vocal);
+                        break;
+                    case "o":
+                        Console.WriteLine("En la palabra {0} se encontraron {1} {2}.", palabra, o, vocal);
+                        break;
+                    case "u":
+                        Console.WriteLine("En la palabra {0} se encontraron {1} {2}.", palabra, u, vocal);
+                        break;
+
+                    default:
+                        Console.WriteLine("Usted no ingreso una vocal valida");
+                        break;
 
 
-            }
+
+                }
+
+
+
+
+
+
+
+
+
+                /*for (int i = 0; i < palabra.Length;i++)
+                {
+                    char numvo = palabra[i];
+                    if(vocal == numvo)
+                    {
+
+                    }
+
+                    Console.WriteLine(palabra[i]);*/
+
+
+            }    
 
 
 
