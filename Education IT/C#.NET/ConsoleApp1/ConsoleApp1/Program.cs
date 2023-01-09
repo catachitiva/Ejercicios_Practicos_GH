@@ -94,6 +94,26 @@ namespace ConsoleApp1
                 Console.WriteLine("Ingrese vocal a contar.");
                 string vocal = Console.ReadLine();
 
+
+                int contadorVocal = 0;
+                char vocal_Mayus = char.Parse(vocal.ToUpper());
+
+
+                foreach (char x in palabra.ToUpper())
+                {
+                    if(x.Equals(vocal_Mayus))
+                    {
+                        contadorVocal++;
+
+                    }
+
+                }
+
+                Console.WriteLine("En la palabra {0} se encontraron {1} {2}.", palabra, contadorVocal, vocal);
+            } 
+
+                /* mi forma sin correccion  
+
                 int a = 0;
                 int e = 0;
                 int i = 0;
@@ -148,30 +168,15 @@ namespace ConsoleApp1
                         Console.WriteLine("Usted no ingreso una vocal valida");
                         break;
 
-
-
                 }
+                */
 
 
 
 
 
 
-
-
-
-                /*for (int i = 0; i < palabra.Length;i++)
-                {
-                    char numvo = palabra[i];
-                    if(vocal == numvo)
-                    {
-
-                    }
-
-                    Console.WriteLine(palabra[i]);*/
-
-
-            }    
+             
 
 
 
