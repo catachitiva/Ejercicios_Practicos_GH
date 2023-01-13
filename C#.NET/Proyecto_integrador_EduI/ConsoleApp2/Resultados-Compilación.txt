@@ -1,0 +1,5 @@
+﻿Operación Compilar iniciada..
+1>------ Operación Compilar iniciada: Proyecto: ConsoleApp2, configuración: Debug Any CPU ------
+1>  ConsoleApp2 -> C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Proyecto_integrador_EduI\ConsoleApp2\bin\Debug\ConsoleApp2.exe
+========== Compilación: 1 correcto, 0 erróneo, 0 actualizado, 0 omitido ==========
+========= 00:00,715 Transcurrido ===========
