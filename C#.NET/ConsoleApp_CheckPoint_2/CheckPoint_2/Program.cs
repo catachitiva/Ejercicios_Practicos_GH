@@ -38,6 +38,9 @@ namespace CheckPoint_2
 
 
                 case 2:
+                    
+                    //puedes meter un refactor como en el link https://stackoverflow.com/questions/3213/convert-integers-to-written-numbers
+                    // asi juegas con la posicion y no tienes que hacer if/case
             
                      //            Ejercicio 2 Tarea:
                      //            Pedir el ingreso de un número del 0 al 9 e imprimir el nombre en letras del mismo
@@ -155,7 +158,7 @@ namespace CheckPoint_2
                     }
                     else
                     {
-                        Console.WriteLine("\nNo ingresaste un número entero.");
+                        Console.WriteLine("\nNo ingresaste un número entero.");// los enteros pueden ser menores que cero.
                     }
 
                 break;
