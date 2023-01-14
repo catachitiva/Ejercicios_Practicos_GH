@@ -6,3 +6,11 @@ C:\Users\Usuario\Desktop\Education IT\C#.NET\Console_ClasesIT\Console_ClasesIT\o
 C:\Users\Usuario\Desktop\Education IT\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Education IT\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.exe
 C:\Users\Usuario\Desktop\Education IT\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.pdb
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\bin\Debug\Console_ClasesIT.exe.config
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\bin\Debug\Console_ClasesIT.exe
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\bin\Debug\Console_ClasesIT.pdb
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.csproj.SuggestedBindingRedirects.cache
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.exe
+C:\Users\Usuario\Desktop\EDU_PROG\Education IT\Ejercicios_practicos_GH\C#.NET\Console_ClasesIT\Console_ClasesIT\obj\Debug\Console_ClasesIT.pdb

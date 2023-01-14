@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -78,8 +79,8 @@ namespace Console_ClasesIT
             //}
             //Console.ReadKey(); deja la consola 
 
-           //**********************************************************************************************************************
-           //**********************************************************************************************************************
+            //**********************************************************************************************************************
+            //**********************************************************************************************************************
 
             //   Ejercicios laboratorio 
 
@@ -105,16 +106,234 @@ namespace Console_ClasesIT
 
             //if ((notaAlumno >= 4) & (notaAlumno < 7))
             //{
-            //    Console.WriteLine("El alumno ha aprobado.");
+            //Console.WriteLine("El alumno ha aprobado.");
             //}
             //else if(notaAlumno >= 7 & notaAlumno <= 10)
             //{
-            //    Console.WriteLine("El alumno ha promocionado.");
+            // Console.WriteLine("El alumno ha promocionado.");
             //}
             //else
             //{
-            //    Console.WriteLine("El alumno debe recuperar.");
+            // Console.WriteLine("El alumno debe recuperar.");
             //}
+
+
+
+            //CLASE 3
+            
+
+            int ej_n = int.Parse(Console.ReadLine());
+
+            switch (ej_n)
+            {
+
+                case 1:
+                    //Imprimir los números del 1 al 10 uno abajo del otro
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        Console.WriteLine(i);
+                    }
+                    break;
+
+
+
+
+
+
+                case 2:  // Imprimir los números del 1 al 10 salteando de a 2 uno abajo del otro.
+
+                         for (int i = 0; i <=10 ; i++)
+                         {
+                          Console.WriteLine(i++);
+                   
+                         }
+
+                    break;
+
+
+
+
+
+                case 3: //Imprimir los números del 10 al 1 uno abajo del otro.
+
+                         for (int i = 10; i >= 1 ; i--)
+                         {
+                           Console.WriteLine(i);
+                         }
+
+                    break;
+
+
+
+
+
+                case 4: // Imprimir la suma de los números impares del 1 al 10
+                       
+                       int totaln = 0;
+
+                       for (int i = 0; i < 10; i++)
+                       {
+                           if(i%2 != 0)
+                           {
+                            Console.WriteLine("los numeros impares son:" + i);
+                             totaln += i;
+                              
+                           }
+                        
+                       }Console.WriteLine("su suma es " + totaln );
+                    break;
+
+
+
+
+
+
+                 case 5:    //            Mostrar la resta de la multiplicación de los números del 1 al 5 con la suma de los números del 1 al 5.
+                            //            Por ejemplo, sería (1 * 2 * 3 * 4 * 5) -(1 + 2 + 3 + 4 + 5).
+                       int s = 0;
+                       int m = 1;
+
+                       for (int i = 1; i <= 5 ; i++)
+                       {
+                        s += i;
+                        m *= i;
+                       } Console.WriteLine("El resultado es: " + m + "-" + s + "= " + (m - s));
+
+                    break;
+
+
+
+
+                 case 6:
+                    //                    Imprimir la siguiente figura:
+                    //@
+                    //@
+                    //@
+                    //@
+
+                    for (int i = 0; i < 4 ; i++)
+                    {
+                        Console.WriteLine("@");
+                    }
+
+
+                    break;
+
+
+
+
+
+                case 7:
+                    //                    Imprimir la siguiente figura:
+                    //@
+                    //@@
+                    //@
+                    //@@
+                    //@
+
+
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (i % 2 == 0)
+                            Console.WriteLine("@");
+                        else
+                            Console.WriteLine("@@");
+                    }
+
+                    
+
+                    break;
+
+
+                case 8:
+                    //                    Imprimir la siguiente figura:
+                    //@
+                    //@@
+                    //@@@
+                    //@@@@
+                    //@@@@@
+                    string signo = "";
+                    for (int i = 0; i < 5; i++)
+                    {
+                        signo += "@";
+                        Console.WriteLine(signo);
+                    }
+                    break;
+
+
+
+
+                case 9: //Imprimir la siguiente figura:
+                        //@@@@@
+                        //@@@@
+                        //@@@
+                        //@@
+                        //@
+
+                    string signo1 = "@@@@@";
+                    string final = "";
+                 
+
+                    for (int i = 5; i >= 1; i--)
+                    {
+                        final = signo1.Substring(0,i) ;
+                        Console.WriteLine(final);
+                    }
+
+
+
+                    break;
+
+
+                 case 10: //Imprimir la siguiente figura:
+                    //@
+                    //@@
+                    //@@@
+                    //@@@@
+                    //@@@
+                    //@@
+                    //@
+
+                    string sig = " ";
+                    string fin = "";
+                    for (int i = 0; i < 4; i++)
+                    {
+                        sig += "@";
+                        Console.WriteLine(sig);
+
+                        if (i == 3)
+                        {
+                            for (int a = 4; a >= 1; a--)
+                            {
+                                fin = sig.Substring(0, a);
+                                Console.WriteLine(fin);
+                            }
+                        }
+                    }
+                    
+                    
+                    
+                   
+                    break;
+
+
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
 
 
 
