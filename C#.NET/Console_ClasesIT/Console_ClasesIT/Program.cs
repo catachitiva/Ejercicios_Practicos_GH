@@ -285,7 +285,7 @@ namespace Console_ClasesIT
                     break;
 
 
-                 case 10: //Imprimir la siguiente figura:
+                 case 10: //Imprimir la siguiente (figura mi forma) :
                     //@
                     //@@
                     //@@@
@@ -310,10 +310,9 @@ namespace Console_ClasesIT
                             }
                         }
                     }
-                    
-                    
-                    
-                   
+
+
+
                     break;
 
 

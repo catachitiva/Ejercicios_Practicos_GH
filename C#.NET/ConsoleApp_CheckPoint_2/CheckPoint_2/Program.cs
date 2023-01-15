@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO.Ports;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,7 +18,7 @@ namespace CheckPoint_2
         {
 
 
-            Console.WriteLine("ESCOGE EL EJERCICIO QUE QUIERES PROBAR");
+            Console.WriteLine("ESCOGE EL EJERCICIO QUE QUIERES PROBAR, ENTRE EL 1 y 10");
             int numEj = int.Parse(Console.ReadLine());
 
             switch (numEj)
@@ -51,9 +54,9 @@ namespace CheckPoint_2
 
                 case 2:
 
-                                Console.WriteLine("Ejercicio 2 Tarea: " +
-                                "\nPedir el ingreso de un número del 0 al 9 e imprimir el nombre en letras del mismo" +
-                                "\nEjemplo: Ingresamos 2 y se nos responde con el mensaje DOS");
+                    Console.WriteLine("Ejercicio 2 Tarea: " +
+                    "\nPedir el ingreso de un número del 0 al 9 e imprimir el nombre en letras del mismo" +
+                    "\nEjemplo: Ingresamos 2 y se nos responde con el mensaje DOS");
 
 
                     Console.WriteLine("\n\nIngresa un numero entre el 0 y el 9 \nEste número sera impreso por pantalla");
@@ -126,9 +129,9 @@ namespace CheckPoint_2
 
 
 
-                               Console.WriteLine("Ejercicio 3 Tarea: " +
-                               "\nPedir el ingreso de dos números por consola e imprimir el de menor valor primero y el de" +
-                               "\nmayor valor despues, separados por una coma");
+                    Console.WriteLine("Ejercicio 3 Tarea: " +
+                    "\nPedir el ingreso de dos números por consola e imprimir el de menor valor primero y el de" +
+                    "\nmayor valor despues, separados por una coma");
 
 
 
@@ -138,16 +141,16 @@ namespace CheckPoint_2
                     Console.WriteLine("\nIngrese el segundo número: ");
                     int num2 = int.Parse(Console.ReadLine());
 
-                     if(num1 > num2)
-                     {
+                    if (num1 > num2)
+                    {
                         Console.WriteLine("\nOrdenado de menor a mayor: " + num2 + ", " + num1);
-                     }
-                     else
-                     {
+                    }
+                    else
+                    {
                         Console.WriteLine("\nOrdenado de menor a mayor: " + num1 + ", " + num2);
-                     }
+                    }
 
-                 break;
+                    break;
 
 
 
@@ -164,22 +167,24 @@ namespace CheckPoint_2
 
                     Console.WriteLine("Ejercicio 4  Tarea: " +
                     "\nEscribir un programa que pida el ingreso de un numero entero y que indiquere si se trata" +
-                    "\nde un numero par o un numero impar. Utilizar el operador de módulo(%)" );
+                    "\nde un numero par o un numero impar. Utilizar el operador de módulo(%)");
 
 
                     Console.WriteLine("\n\nIngresa un numero entero: ");
                     int num3 = int.Parse(Console.ReadLine());
 
-                        if (num3 % 2 == 0)
-                        {
-                            Console.WriteLine("\nEl numero ingresaso {0} es par.", num3);
-                        }
-                        else
-                        {
-                            Console.WriteLine("\nEl numero ingresado {0} es impar.", num3);
-                        }
+                    if (num3 % 2 == 0)
+                    {
+                        Console.WriteLine("\nEl numero ingresaso {0} es par.", num3);
+                    }
+                    else
+                    {
+                        Console.WriteLine("\nEl numero ingresado {0} es impar.", num3);
+                    }
 
-                break;
+                    break;
+
+
 
 
 
@@ -191,9 +196,9 @@ namespace CheckPoint_2
 
 
 
-                                  Console.WriteLine("Ejercicio 5 Tarea: " +
-                                                    "\nCalcula la potencia dado una base y un exponente utilizando el búcle WHILE" +
-                                                    "\nCalcula la potencia dado una base y un exponente utilizando el búcle FOR");
+                    Console.WriteLine("Ejercicio 5 Tarea: " +
+                                      "\nCalcula la potencia dado una base y un exponente utilizando el búcle WHILE" +
+                                      "\nCalcula la potencia dado una base y un exponente utilizando el búcle FOR");
 
                     Console.WriteLine("\n\nCalculando ponencia, ingresa la base ");
                     long num4 = long.Parse(Console.ReadLine());
@@ -201,15 +206,15 @@ namespace CheckPoint_2
                     Console.WriteLine("\nCalculando ponencia, ingresa el exponente ");
                     long num5 = long.Parse(Console.ReadLine());
                     long num6 = num5;
-                    long resultado_pot= num4;
+                    long resultado_pot = num4;
                     long resultado_pot2 = num4;
                     // Usando FOR:
 
                     for (int i = 1; i < num5; i++)
                     {
-                     resultado_pot *= num4;
+                        resultado_pot *= num4;
                     }
-                    Console.WriteLine("La potencia de un número usando FOR \nCon base " + num4 + " y un exponante " + num5 + " es " + resultado_pot );
+                    Console.WriteLine("La potencia de un número usando FOR \nCon base " + num4 + " y un exponante " + num5 + " es " + resultado_pot);
 
                     // Usando While
 
@@ -239,14 +244,14 @@ namespace CheckPoint_2
 
 
 
-                          Console.WriteLine( "Ejercicio 6 Tarea: " +
-                                             "\nA partir de un array de elementos, buscar si un valor se encuentra dentro del mismo." + 
-                                             "\nEn caso que se encuentre, mostrar la posición en la cual fue encontrado. " +
-                                             "\nDe lo contrario, mostrar - 1");
+                    Console.WriteLine("Ejercicio 6 Tarea: " +
+                                       "\nA partir de un array de elementos, buscar si un valor se encuentra dentro del mismo." +
+                                       "\nEn caso que se encuentre, mostrar la posición en la cual fue encontrado. " +
+                                       "\nDe lo contrario, mostrar - 1");
 
-                          Console.WriteLine("\nTeniendo el siguiente array: \n\nedades = { 20, 15, 10, 12, 28, 35, 48, 7, 5, 6, 10, 11 } ");
-                    
-                   
+                    Console.WriteLine("\nTeniendo el siguiente array: \n\nedades = { 20, 15, 10, 12, 28, 35, 48, 7, 5, 6, 10, 11 } ");
+
+
                     int[] edades = { 20, 15, 10, 12, 28, 35, 48, 7, 5, 6, 10, 11 };
                     Console.WriteLine("\nIngresa el valor a ser buscado:");
                     int num_buscar = int.Parse(Console.ReadLine());
@@ -261,12 +266,14 @@ namespace CheckPoint_2
                             Console.WriteLine(" \n-1  \nnúmero no se encuentra en el Array");
                             break;
                         }
-                            
-                                                  
-                    
 
 
-                break;
+
+
+
+                    break;
+
+
 
 
 
@@ -274,12 +281,12 @@ namespace CheckPoint_2
 
                 case 7:
 
-                   Console.WriteLine("Ejercicio 7 Tarea: " +
-                                     "\nDeterminar que puntaje extra le corresponde a un jugador luego de pedirle que " +
-                                     "\ningrese dicho valor. Los puntajes ingresados iran de 0 a 9." +
-                                     "\n\n• Si el puntaje ingresado esta entre 1 y 3 inclusive, le suma 10 veces el puntaje ingresado" +
-                                     "\n• Si el puntaje ingresado esta entre 7 y 9 inclusive, le suma 1000 veces el puntaje ingresado" +
-                                     "\n• Para puntajes mayores a 9 ó 0, se emitirá un mensaje de error");
+                    Console.WriteLine("Ejercicio 7 Tarea: " +
+                                      "\nDeterminar que puntaje extra le corresponde a un jugador luego de pedirle que " +
+                                      "\ningrese dicho valor. Los puntajes ingresados iran de 0 a 9." +
+                                      "\n\n• Si el puntaje ingresado esta entre 1 y 3 inclusive, le suma 10 veces el puntaje ingresado" +
+                                      "\n• Si el puntaje ingresado esta entre 7 y 9 inclusive, le suma 1000 veces el puntaje ingresado" +
+                                      "\n• Para puntajes mayores a 9 ó 0, se emitirá un mensaje de error");
 
 
 
@@ -307,7 +314,7 @@ namespace CheckPoint_2
 
 
 
-                  break;
+                    break;
 
 
 
@@ -326,18 +333,18 @@ namespace CheckPoint_2
 
 
                     int[] sinOrdenar = { 10, 18, 22, 65, 8, 0, 126, 8, 996, 7, 2, 5, 23, 75, 44, 29, 24 };
-                    int[] ordenado = new int[17]; 
+                    int[] ordenado = new int[17];
                     Array.Sort(sinOrdenar);
 
-                    for(int i = 0; i <sinOrdenar.Length;i++)
+                    for (int i = 0; i < sinOrdenar.Length; i++)
                     {
-                       ordenado[i] = sinOrdenar[i];
-                       Console.WriteLine("Posición " + i + ": " + ordenado[i]);
+                        ordenado[i] = sinOrdenar[i];
+                        Console.WriteLine("Posición " + i + ": " + ordenado[i]);
                     }
-                    
-                    Console.WriteLine("\n\n Array Ordenado = { " + (string.Join(", ", ordenado) +" }"));
 
-                break;
+                    Console.WriteLine("\n\n Array Ordenado = { " + (string.Join(", ", ordenado) + " }"));
+
+                    break;
 
 
 
@@ -364,7 +371,7 @@ namespace CheckPoint_2
 
 
                     int suma = 0;
-                    int [] arrayPromedio = { 10, 18, 22, 65, 8, 0, 126, 8, 996, 7, 2, 5, 23, 75, 44, 29, 24 };
+                    int[] arrayPromedio = { 10, 18, 22, 65, 8, 0, 126, 8, 996, 7, 2, 5, 23, 75, 44, 29, 24 };
                     for (int a = 0; a < arrayPromedio.Length; a++)
                     {
                         suma += arrayPromedio[a];
@@ -373,7 +380,7 @@ namespace CheckPoint_2
                     Console.WriteLine("El promedio es: " + suma / arrayPromedio.Length);
 
 
-                break;
+                    break;
 
 
 
@@ -391,21 +398,122 @@ namespace CheckPoint_2
                                       "\r\nImprimir en pantalla el contenido del array por cada una de sus posiciones");
 
 
-                    //long[] array2 = new long[10];
+                    int[] array2 = new int[10];
+                    Console.WriteLine("\n\nIngrese valor agregar al Array");
+                    ;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        int dato = int.Parse(Console.ReadLine());
+                        array2[i] = dato;
+                    }
 
-                    //for(int i = 0; i < 10;i++)
-                    //{
-                    //  array2 = long.Parse(Console.ReadLine(i));
-                    //}
+                    Console.WriteLine("\n\n Array = { " + (string.Join(", ", array2) + " }"));
 
-                    // sin terminar aun 
 
-                break;
 
-                case 11:
                     break;
 
+
+
+
+
+
+
+
+
+
+
+
+
+                case 11:
+
+                    Console.WriteLine("Ejercicio 11 Tarea:" +
+                                      "\r\nPidiendo una palabra o frase por consola comprobar si la misma es un palíndromo o no. " +
+                                      "\r\nInformar el resultado.\r\nEjemplo de palíndromo: Anita lava la tina - Se lee igual de izquiera a derecha y de derecha a izquierda\r\n");
+
+                    Console.WriteLine("\nIngrese palabra o frase: ");
+                    string palin = Console.ReadLine();
+                    string palin2 =  "";
+            
+                    for (int i = palin.Length -1 ; i >= 0; i--)
+                    {
+                        palin2 += palin[i];
+                    }
+                      Console.WriteLine("\n\nLa frase o palabra invertida: " + palin2);
+
+
+
+                    if ((palin.Replace(" ",String.Empty).ToLower()).Equals(palin2.Replace(" ", String.Empty).ToLower()))
+                        Console.WriteLine("\n\n¡ La Palabra o frase ingresada es un palíndromo.! ");
+                    else
+                        Console.WriteLine("\n\nLa palabra o frase que ingresaste no es un palíndromo.\n\nSigue intentando.");
+
+                
+
+
+
+                    break;
+
+
+
+
+
+
+
+
+
+
                 case 12:
+                    Console.WriteLine("Ejercicio 12 Tarea:" +
+                        "\n Dado un valor de temperatura por consola y elegida una opcion de conversión," +
+                        "\n convertir el valor según corresponda. Las opciones de conversión seran:" +
+                        "\r\n Grados Celsius a Grados Fahrenheit" +
+                        "\r\n Grados Fahrenheit a Grados Celsius" +
+                        "\r\n Grados Kelvin a Grados Celcius" + 
+                        "\n" +
+                        "\r\no Dado un valor de distancia por consola y elegida una opcion de conversión," +
+                        "\r\nconvertir el valor según corresponda. Las opciones de conversión seran:" +
+                        "\r\n Metros a Pies" +
+                        "\r\n Kilometros a Millas" +
+                        "\r\n Centimetros a Pulgadas");
+
+
+                    Console.WriteLine("\n\n\nIngrese la temperatura que desea convertir: ");
+                    double tempU = double.Parse(Console.ReadLine());
+
+                    Console.WriteLine("Escoja una opcion de conversion: " +
+                                      "\n 1. Grados Celsius a Grados Fahrenheit." +
+                                      "\n 2. Grados Fahrenheit a Grados Celsius " +
+                                      "\n 3. Grados Kelvin a Grados Celcius");
+
+                    int tipo_con = int.Parse(Console.ReadLine());
+                    
+                    
+                    float tempK;
+
+                    switch(tipo_con)
+                    {
+                        case 1:   // F = 1,8* C+32
+                            double tempF = 1.8 * tempU + 32;
+                            Console.Write("\nIngresaste " + tempU + "° celsius, que equivalen a " + tempF + "° Fahrenheit\n");
+                        break;
+
+
+                        case 2: // C=( F- 32)/1,8
+                            double tempC = (tempU - 32) / 1.8;
+                            Console.Write("\nIngresaste " + tempU + "° Fahrenheit, que equivalen a " + tempC + "° celsius. \n");
+                        break;
+
+
+                        case 3:
+                            break;
+
+                    }
+
+                    //SIN TERMINAR 
+
+
+
                     break;
 
                 case 13:
