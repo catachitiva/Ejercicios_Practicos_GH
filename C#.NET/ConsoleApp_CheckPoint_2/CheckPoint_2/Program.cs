@@ -18,7 +18,7 @@ namespace CheckPoint_2
         {
 
 
-            Console.WriteLine("ESCOGE EL EJERCICIO QUE QUIERES PROBAR, ENTRE EL 1 y 10");
+            Console.WriteLine("ESCOGE EL EJERCICIO QUE QUIERES PROBAR, ENTRE EL 1 y 13");
             int numEj = int.Parse(Console.ReadLine());
 
             switch (numEj)
@@ -478,46 +478,167 @@ namespace CheckPoint_2
                         "\r\n Centimetros a Pulgadas");
 
 
-                    Console.WriteLine("\n\n\nIngrese la temperatura que desea convertir: ");
-                    double tempU = double.Parse(Console.ReadLine());
+                    Console.WriteLine("\n\nQUE DESEA CONVERTIR ?? \n\n1. PARA TEMPERATURA.\n\n2. PARA DISTANCIA");
+                    int usuario = int.Parse(Console.ReadLine());
 
-                    Console.WriteLine("Escoja una opcion de conversion: " +
-                                      "\n 1. Grados Celsius a Grados Fahrenheit." +
-                                      "\n 2. Grados Fahrenheit a Grados Celsius " +
-                                      "\n 3. Grados Kelvin a Grados Celcius");
-
-                    int tipo_con = int.Parse(Console.ReadLine());
-                    
-                    
-                    float tempK;
-
-                    switch(tipo_con)
+                    if (usuario == 1)
                     {
-                        case 1:   // F = 1,8* C+32
-                            double tempF = 1.8 * tempU + 32;
-                            Console.Write("\nIngresaste " + tempU + "° celsius, que equivalen a " + tempF + "° Fahrenheit\n");
-                        break;
+                        Console.WriteLine("\n\n\nIngrese la temperatura que desea convertir: ");
+                        double tempU = double.Parse(Console.ReadLine());
+
+                        Console.WriteLine("Escoja una opcion de conversion: " +
+                                          "\n 1. Grados Celsius a Grados Fahrenheit." +
+                                          "\n 2. Grados Fahrenheit a Grados Celsius " +
+                                          "\n 3. Grados Kelvin a Grados Celcius");
+
+                        int tipo_con = int.Parse(Console.ReadLine());
 
 
-                        case 2: // C=( F- 32)/1,8
-                            double tempC = (tempU - 32) / 1.8;
-                            Console.Write("\nIngresaste " + tempU + "° Fahrenheit, que equivalen a " + tempC + "° celsius. \n");
-                        break;
+                        switch (tipo_con)
+                        {
+                            case 1:   // F = 1,8* C+32
+                                double tempF = 1.8 * tempU + 32;
+                                Console.Write("\nIngresaste " + tempU + "° celsius, que equivalen a " + tempF + "° Fahrenheit\n");
+                                break;
 
 
-                        case 3:
-                            break;
+                            case 2:  // C=( F- 32)/1,8
+                                double tempC = (tempU - 32) / 1.8;
+                                Console.Write("\nIngresaste " + tempU + "° Fahrenheit, que equivalen a " + tempC + "° celsius. \n");
+                                break;
 
+
+                            case 3: //La temperatura en grados Celsius (° C) es igual a la temperatura en Kelvin (K) menos 273.15:
+                                double tempK = tempU - 273.15;
+                                Console.Write("\nIngresaste " + tempU + "k (Kelvin), que equivalen a " + tempK + "° celsius. \n");
+                                break;
+
+                            default:
+                                Console.WriteLine("\n\nERROR, INGRESO UN VALOR INVALIDO.");
+                                break;
+                        }
                     }
+                    else if (usuario == 2)
+                    {
 
-                    //SIN TERMINAR 
+
+                        Console.WriteLine("\n\n\nIngrese la distancia que desea convertir: ");
+                        double distU = double.Parse(Console.ReadLine());
+
+
+                        Console.WriteLine("Escoja una opcion de conversion: " +
+                                          "\n 1. Metros a Pies." +
+                                          "\n 2. Kilometros a Millas. " +
+                                          "\n 3. Centimetros a Pulgadas. ");
+
+                        int tipo_con2 = int.Parse(Console.ReadLine());
+
+                        switch (tipo_con2)
+                        {
+                            case 1: //1 metro equivale a 3.28 pies 
+                                double distP = distU * 3.28;
+                                Console.WriteLine("\nIngresaste " + distU + "m que equivalen a " + distP + "ft (Pies) ");
+                                break;
+
+                            case 2: // 1 km equivale a 0.6214 millas
+                                double distM = distU * 0.6214;
+                                Console.WriteLine("\nIngresaste " + distU + "Km que equivalen a " + distM + "mi (Millas). ");
+                                break;
+
+                            case 3://1 cm es igual a 0,394 pulgadas
+                                double distPu = distU * 0.39;
+                                Console.WriteLine("\nIngresaste " + distU + " cm que equivalen a " + distPu + " (Pulgadas). ");
+                                break;
+
+                            default:
+                                Console.WriteLine("\n\nERROR, INGRESO UN VALOR INVALIDO.");
+                                break;
+
+                        }
+                    }
+                    else
+                        Console.WriteLine("\n\nERROR, INGRESO UN VALOR INVALIDO.");
+
+                break;
 
 
 
-                    break;
+
+
+
 
                 case 13:
-                    break;
+
+                    Console.WriteLine("Ejercicio 13 Tarea:" +
+                                      "\r\nDesarrolle una calculadora de interes para los clientes de un banco dado por linea de comando un capital inicial," +
+                                      " taza anual(taza por periodo) y cantidad de años(cantidad de periodos)." +
+                                      "\r\nLa formula a utilizar es: el capital acumulado del periodo anterior + (taza * el capital acumulado)." +
+                                      "\r\nEjemplo:" +
+                                      "\r\nPeriodos p = 4 | Taza i = 10 % | Capital inicial c = $1000" +
+                                      "\r\np = 1 | capital acumulado = $1000 | interes = (capital acumulado * taza) $1000 * 0.1 = $100" +
+                                      "\r\np = 2 | capital acumulado = $1100 | interes = (capital acumulado * taza) $1100 * 0.1 = $110" +
+                                      "\r\np = 3 | capital acumulado = $1210 | interes = (capital acumulado * taza) $1210 * 0.1 = $121" +
+                                      "\r\np = 4 | capital acumulado = $1331 | interes = (capital acumulado * taza) $1331 * 0.1 = $133" +
+                                      "" +
+                                      "\r\nIntereses acumulado a lo largo al final del 4 periodo $464" +
+                                      "\r\nA tener en cuenta, el sistema tiene que ser a prueba de errores por lo tanto:" +
+                                      "\r\nPara prevenir errores de los usuarios, no permite tazas negativas," +
+                                      "\r\nemite un error cuando se ingresa un valor negativo." +
+                                      "\r\nLos intereses no pueden sobrepasar un maximo del 50%. Emite un error por pantalla cuando se ingresa un valor que sobrepasa el 50% de interes." +
+                                      "\r\nEl Capital no puede ser negativo, emite un error por pantalla cuando se ingresa un valor negativo." +
+                                      "\r\nAl final emite un informe con los datos ingresados, el capital final y el interes generado.");
+
+
+                    Console.WriteLine("\n\n\nBIENVENIDO, ESTA ES UNA CALCULADORA DE INTERESES.");
+                    Console.WriteLine("\n Ingrese su capital inicial:");
+
+                    long capIni = long.Parse(Console.ReadLine());
+                    if(capIni < 0)
+                    {
+                        Console.WriteLine("\n\nERROR, INGRESO UN VALOR INVALIDO.");
+                        break;
+                    }
+
+                    Console.WriteLine("\nIngrese su taza anual teniendo encuenta que: " +
+                                      "\nTaza 10% ingresar 0,1" +
+                                      "\nTaza 20% Ingresar 0,2" +
+                                      "\nTaza 30% Ingresar 0.3");
+                      
+                    double taza = double.Parse(Console.ReadLine());
+                    if (taza < 0)
+                    {
+                        Console.WriteLine("\n\nERROR, INGRESO UN VALOR INVALIDO.");
+                        break;
+                    }
+
+                    Console.WriteLine("\n Ingrese su cantidad de años:");
+                    int pe = int.Parse(Console.ReadLine());
+                    if (pe < 0)
+                    {
+                        Console.WriteLine("\n\nERROR, INGRESO UN VALOR INVALIDO.");
+                        break;
+                    }
+
+                    double capAcu = capIni;
+                    double intTotal=0;
+
+                    for (int i = 1; i <= pe; i++) //el capital acumulado del periodo anterior + (taza * el capital acumulado)
+                    {
+                        Console.WriteLine("Periodo " + i + " | capital acumulado = " + capAcu + " | interes = " + (taza * capAcu));
+                        double interes = (taza * capAcu);
+                        intTotal += interes; 
+                            
+                        capAcu = capAcu + (taza * capAcu);   
+                    }
+                    
+                    if(intTotal > (capIni/2) )
+                        Console.WriteLine("\n\nERROR, INGRESO INVALIDO, INTERES TOTAL (" +intTotal+") SUPERA EL 50% DEL VALOR INICIAL");
+                    else
+                    {
+                        Console.WriteLine("\n\nCapital inicial = $" + capIni + "\nCapital final acumulado = $" + capAcu + "\nInteres total ganado = $" + intTotal);
+                    }
+
+                  break;
             }
 
 
