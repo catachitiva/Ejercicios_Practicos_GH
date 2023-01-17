@@ -205,11 +205,18 @@ namespace CheckPoint_2
 
                     Console.WriteLine("\nCalculando ponencia, ingresa el exponente ");
                     long num5 = long.Parse(Console.ReadLine());
+                    //el num 6 es el num 5
+                    //
                     long num6 = num5;
                     long resultado_pot = num4;
                     long resultado_pot2 = num4;
                     // Usando FOR:
-
+                    
+                    //RECORDEMOS que la potencia puede tener exponente negativo. que pasa entonces con x^-1 (por leyes de exponentes eso es igual a 1/x)???
+                    //con exponente -1 no va a iterar ni una vez. 
+                    // exponente positivo--> se multiplica tantas veces como el valor del exponente
+                    //exponente negativo--> el valor se calcula asi: si n<0 entonces x^n = (1/x^(-n)
+                    
                     for (int i = 1; i < num5; i++)
                     {
                         resultado_pot *= num4;
@@ -255,6 +262,11 @@ namespace CheckPoint_2
                     int[] edades = { 20, 15, 10, 12, 28, 35, 48, 7, 5, 6, 10, 11 };
                     Console.WriteLine("\nIngresa el valor a ser buscado:");
                     int num_buscar = int.Parse(Console.ReadLine());
+                    
+                    //esta bien, la cosa es que en c# hay algo que se llama linq. 
+                    //https://www.tutorialspoint.com/how-to-check-in-chash-whether-the-string-array-contains-a-particular-work-in-a-string-array
+                    //
+
 
 
                     for (int i = 0; i < edades.Length; i++)
@@ -297,17 +309,17 @@ namespace CheckPoint_2
                     {
                         Console.WriteLine("\n\nEl puntaje ingresado es erroneo. ");
                     }
-                    else if ((puntaje == 1) || (puntaje == 2) || (puntaje == 3))
+                    else if ((puntaje == 1) || (puntaje == 2) || (puntaje == 3)) //Piensa en rangos. if(puntaje>=1 && puntaje <=3) 
                     {
                         n_Puntaje = puntaje * 10;
                         Console.WriteLine("\nEl puntaje extra del puntaje ingresado (" + puntaje + ") es: " + n_Puntaje);
                     }
-                    else if ((puntaje == 7) || (puntaje == 8) || (puntaje == 9))
+                    else if ((puntaje == 7) || (puntaje == 8) || (puntaje == 9))//corregir
                     {
                         n_Puntaje = puntaje * 1000;
                         Console.WriteLine("\nEl puntaje extra del puntaje ingresado (" + puntaje + ") es: " + n_Puntaje);
                     }
-                    else if ((puntaje == 4) || (puntaje == 5) || (puntaje == 6))
+                    else if ((puntaje == 4) || (puntaje == 5) || (puntaje == 6))//corregir
                     {
                         Console.WriteLine("\nEl puntaje ingresado (" + puntaje + ") no tiene puntaje extra.");
                     }
@@ -327,6 +339,7 @@ namespace CheckPoint_2
                                       " \r\nPartiendo de un array de números declarado, ordenar el mismo y mostrar" +
                                       "\r\nel resultado del array ordenado");
 
+                     //
 
                     Console.WriteLine("teniendo el siguiente Array:" +
                         "\n\n sinOrdenar = { 10, 18, 22, 65, 8, 0, 126, 8, 996, 7, 2, 5, 23, 75, 44, 29, 24 } \n\n");
@@ -334,6 +347,7 @@ namespace CheckPoint_2
 
                     int[] sinOrdenar = { 10, 18, 22, 65, 8, 0, 126, 8, 996, 7, 2, 5, 23, 75, 44, 29, 24 };
                     int[] ordenado = new int[17];
+                    //APAAAAA USAMOS EL SORT!! 
                     Array.Sort(sinOrdenar);
 
                     for (int i = 0; i < sinOrdenar.Length; i++)
@@ -342,7 +356,7 @@ namespace CheckPoint_2
                         Console.WriteLine("Posición " + i + ": " + ordenado[i]);
                     }
 
-                    Console.WriteLine("\n\n Array Ordenado = { " + (string.Join(", ", ordenado) + " }"));
+                    Console.WriteLine("\n\n Array Ordenado = { " + (string.Join(", ", ordenado) + " }")); //amo que uses cositas nuevas <3 
 
                     break;
 
@@ -371,6 +385,7 @@ namespace CheckPoint_2
 
 
                     int suma = 0;
+                    //existe en linq el .SUM
                     int[] arrayPromedio = { 10, 18, 22, 65, 8, 0, 126, 8, 996, 7, 2, 5, 23, 75, 44, 29, 24 };
                     for (int a = 0; a < arrayPromedio.Length; a++)
                     {
@@ -400,11 +415,12 @@ namespace CheckPoint_2
 
                     int[] array2 = new int[10];
                     Console.WriteLine("\n\nIngrese valor agregar al Array");
-                    ;
+                    ;//kah
+                    
                     for (int i = 0; i < 10; i++)
                     {
                         int dato = int.Parse(Console.ReadLine());
-                        array2[i] = dato;
+                        array2[i] = dato;//y los valores continuOS???
                     }
 
                     Console.WriteLine("\n\n Array = { " + (string.Join(", ", array2) + " }"));
